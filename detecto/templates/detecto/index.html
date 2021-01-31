@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Home page</title>
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href= "{% static 'detecto/css/bootstrap4-neon-glow.min.css' %}" >
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+    <link rel="stylesheet" href="{% static 'detecto/css/main.css' %}">
+
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image:href="{% static 'detecto/images/bg.jpg' %}";
+}
+form{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+</style>
+ </head>
+  <body>
+
+<!--    <img src="{% static 'detecto/images/bg.jpg' %}">-->
+    <form method="POST" style="padding-top:50px;">
+    {%  csrf_token %}
+    <input type="textarea" name="query" placeholder="Your Query"><br><br>
+    <!-- <label>Choose website to search on:</label>
+     <select name="website" id="website">
+    <option value="wikipedia">wikipedia</option>
+    <option value="stackoverflow">stackoverflow</option>
+  </select>
+-->
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+   <div class="jumbotron bg-transparent mb-0 pt-3 radius-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8">
+                        <h1 class="display-1 bold color_white content__title">NewSer<span class="vim-caret">&nbsp;</span></h1>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-4">
+                        <p class="mt-5 text-grey text-spacey hackerFont lead">
+                            YOur news verifier
+                        </p>
+                        <button class="btn btn-outline-danger btn-shadow px-3 my-2 ml-0 ml-sm-1 text-left typewriter">
+                            <h4>Search</h4>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
