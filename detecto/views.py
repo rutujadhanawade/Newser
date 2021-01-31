@@ -43,12 +43,13 @@ def home(request):
 
 def detecting_fake_news(var):
     #retrieving the best model for prediction call
-    # load_model = pickle.load(open('/home/rutuja/HACK - IT/Newser/final_model.sav', 'rb'))
-    # prediction = load_model.predict([var])
-    # prob = load_model.predict_proba([var])
+    load_model = pickle.load(open('/home/rutuja/HACK - IT/Newser/final_model.sav', 'rb'))
+    prediction = load_model.predict([var])
+    prob = load_model.predict_proba([var])
     # find("newyorker", "trump")
     # return render(request, 'detecto/index.html')
-    return (print("The given statement is "), print("The truth probability score is "))
+    return (print("The given statement is ", prediction[0]),
+            print("The truth probability score is ", prob[0][1]))
 
 # # our result page view
 # def result(request):
